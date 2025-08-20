@@ -1,48 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onimer <onimer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 08:24:49 by onimer            #+#    #+#             */
-/*   Updated: 2025/08/20 09:55:36 by onimer           ###   ########.fr       */
+/*   Created: 2025/08/18 09:14:58 by onimer            #+#    #+#             */
+/*   Updated: 2025/08/18 09:34:54 by onimer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	if (!dest || !src)
+		return (NULL);
+	if (dest > src)
 	{
-		dest[i] = src[i];
-		i++;
+		i = (int)len - 1;
+		while (i >= 0)
+		{
+			*(char *)(dest + 1) = *(char *)(src + 1);
+			i--;
+		}
 	}
-	dest[i] = '\0';
+	else
+	{
+		i = 0;
+		while (i < (int)len)
+		{
+			*(char *)(dest + i) = *(char *)(src + i);
+			i++;
+		}
+	}
 	return (dest);
 }
 
-char	*ft_strdup(const char *src)
-{
-	char	*str;
-
-	str = (char *) malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (!str)
-		return (0);
-	ft_strcpy(str, src);
-	return (str);
-}
 /*
 #include <stdio.h>
 
-int	main()
+int main(void)
 {
-	char str[] = "Osama Nimer";
-	printf("%s" , ft_strdup(str));
+	
+	char str[11] = "0123456789";
+	ft_memmove(str + 2, str, 5);
+	
+	printf("%s",str);
 }
 */

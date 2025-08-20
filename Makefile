@@ -1,15 +1,14 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MakeFile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: onimer <onimer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/08 22:28:03 by marvin            #+#    #+#              #
-#    Updated: 2025/08/08 22:28:03 by marvin           ###   ########.fr        #
+#    Created: 2025/08/20 09:56:27 by onimer            #+#    #+#              #
+#    Updated: 2025/08/20 09:56:27 by onimer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = libft.a
 
@@ -27,7 +26,12 @@ SRCS = ft_strlen.c \
 	   ft_memset.c \
 	   ft_bzero.c \
 	   ft_memcpy.c \
+	   ft_strncmp.c \
+	   ft_memmove.c \
+	   ft_strlcat.c \
+	   ft_strlcpy.c \
 
+	   
 OBJS = $(SRCS:.c=.o)
 
 
