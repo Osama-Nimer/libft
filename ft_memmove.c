@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: onimer <onimer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 09:14:58 by onimer            #+#    #+#             */
-/*   Updated: 2025/08/18 09:34:54 by onimer           ###   ########.fr       */
+/*   Updated: 2025/08/25 13:17:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,22 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	int	i;
+	char	*d;
+	char	*s;
 
-	if (!dest || !src)
-		return (NULL);
-	if (dest > src)
+	if (dest == src || len == 0)
+		return (dest);
+	d = (char *)dest;
+	s = (char *)src;
+	if (d > s && d < s + len)
 	{
-		i = (int)len - 1;
-		while (i >= 0)
-		{
-			*(char *)(dest + 1) = *(char *)(src + 1);
-			i--;
-		}
+		while (len--)
+			d[len] = s[len];
 	}
 	else
 	{
-		i = 0;
-		while (i < (int)len)
-		{
-			*(char *)(dest + i) = *(char *)(src + i);
-			i++;
-		}
+		while (len--)
+			*d++ = *s++;
 	}
 	return (dest);
 }
-
-/*
-#include <stdio.h>
-
-int main(void)
-{
-	
-	char str[11] = "0123456789";
-	ft_memmove(str + 2, str, 5);
-	
-	printf("%s",str);
-}
-*/
