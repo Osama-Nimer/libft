@@ -3,10 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: onimer <onimer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:38:20 by onimer            #+#    #+#             */
-/*   Updated: 2025/08/20 09:55:05 by onimer           ###   ########.fr       */
+/*   Updated: 2025/08/27 10:14:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t	index;
+
+	index = 0;
+	while (index < n)
+	{
+		if (((unsigned char *)s)[index] == (unsigned char)c)
+			return ((void *)(s + index));
+		index++;
+	}
+	return (NULL);
+}
