@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 09:14:58 by onimer            #+#    #+#             */
-/*   Updated: 2025/08/25 13:17:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/27 19:29:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,13 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	}
 	return (dest);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char arr[] = "Osama Nimer";
+// 	char d[] = "";
+// 	ft_memmove(d , arr, 1);
+// 	printf("%s\n", arr);
+// 	return 0;
+// }
